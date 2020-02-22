@@ -1,0 +1,59 @@
+$baseSize : 14px;
+
+
+$base-color-red: 0;
+$base-color-green: 120;
+$base-color-blue: 240;
+
+$color_text_white: white;
+
+$porcentaje: 0%;
+
+@mixin degradado($color, $baseColor, $porcentaje) {
+    
+    @for $i from 1 through 9 {
+        .#{$color} div:nth-child(#{$i}) {
+            height: 100px;
+            width: 100px;
+            color: $color_text_white;
+            $porcentaje: $porcentaje + 10;
+            background-color: hsl($baseColor,100%,$porcentaje);
+         }
+    }
+  }
+
+@for $j from 1 through 3 { 
+  @if ($j == 1) {
+    $color: $base-color-red;
+    .a {
+      color: $color;
+    }
+    @include degradado(red, $base-color-red ,$porcentaje);
+  }
+  @if ($j == 2) {
+    $color: $base-color-green;
+    .b {
+      color: $color;
+    }
+    @include degradado(green, $base-color-green,$porcentaje);
+  }
+  @if ($j == 3) {
+    $color: $base-color-blue;
+    .c {
+      color: $color;
+    }
+    @include degradado(blue, $base-color-blue, $porcentaje);
+  }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0 2px 10px;
+    }
+}

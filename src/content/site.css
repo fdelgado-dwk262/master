@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
 body {
     font-size: 80%; /* 80% base line - de pende del navegador aprox 16px */
-    font-family: sans-serif;
-    background-color: wheat;
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
 }
 
 a {
@@ -11,4 +13,31 @@ a {
 }
 a:hover {
     color: white;
+}
+
+h1, h2 {
+    background-color: lightgrey;
+}
+div {
+   font-size: 0.5em;
+}
+
+p {
+ font-size: 2em;
+}
+
+.content_flex {
+    display: flex;
+}
+.content_flex div:nth-child(1) {
+    background-color: goldenrod;
+    flex-grow: 1;
+}
+.content_flex div:nth-child(2) {
+    background-color: thistle;
+    flex-grow: 2;
+}
+.content_flex div:nth-child(3) {
+    background-color: teal;
+    flex-grow: 3;
 }
